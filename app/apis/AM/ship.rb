@@ -1,9 +1,7 @@
-module AM
-	class Ship < Grape::API
+class AM::Ship < Grape::API
 
-		get 'ship_hello' do 
-			'AM_ship'
-		end
-
+	get 'ship_hello' do 
+		'AM_ship'
 	end
+
 end

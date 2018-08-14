@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   	mount BoyAPI => '/boy'
   	mount GirlAPI => '/girl'
   	mount ManAPI => '/man'
+
+  	# 三、定义不同层级的API
+  	mount Color::RedAPI => '/color'
+
 end
