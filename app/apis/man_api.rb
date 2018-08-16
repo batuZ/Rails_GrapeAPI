@@ -31,6 +31,7 @@ class ManAPI < Grape::API
 			'create_at'=>Time.new.utc,
 			'update_at'=>Time.new.utc
 		}
+		present data
 	end
 	# {
 	#   "create_at": "2018-08-14T10:38:45.452Z",
