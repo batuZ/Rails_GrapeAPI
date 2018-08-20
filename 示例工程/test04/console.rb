@@ -1,7 +1,4 @@
 puts '>>>>> RUN'
-p @u = User.first
-
-p @s =Sound.create(url: 'http', user_id: @u.id)
-
-pp _.errors.messages
+pos = Sound.find(3)
+pp pos.to_json
 puts '>>>>> END'

@@ -8,6 +8,7 @@ class BoyAPI < Grape::API
   				'ip'	=>	request.ip
   			}
   			present data
+      #  as_json返回模型对象的散列表示，而to_json返回一个json对象。
 	end
   	
 
