@@ -1,3 +1,4 @@
+require './app/apis/helper.rb'
 class VERSION_1::Api_v1 < Grape::API
 	post 'login' do 
 	end
@@ -14,7 +15,8 @@ class VERSION_1::Api_v1 < Grape::API
 	get :josn_case do
 		## 接收
 		arr = Sound.first(3)
-
+		## 调方法计算距离
+		kkk 'fdfefkflsd'
 		## 返回
 		data=[]
 		arr.each do |s|
