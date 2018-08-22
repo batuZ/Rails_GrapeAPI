@@ -140,3 +140,20 @@
     lat = 180/M_PI*(2*atan(exp(lat*M_PI/180))-M_PI/2);
     return CLLocationCoordinate2DMake(lat, lon);
 }
+
+
+     w:
+     latitude    CLLocationDegrees    4851981.4172018804
+     longitude    CLLocationDegrees    116.08799621838706
+     
+     e:
+     latitude    CLLocationDegrees    4855022.4620532598
+     longitude    CLLocationDegrees    12992040.394812275
+     
+     n:
+     latitude    CLLocationDegrees    4891929.6882040696
+     longitude    CLLocationDegrees    12950848.060007252
+     
+     s:
+     latitude    CLLocationDegrees    4823229.7204252267
+     longitude    CLLocationDegrees    12956446.347120021
