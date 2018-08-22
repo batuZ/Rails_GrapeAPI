@@ -17,5 +17,4 @@ rem rails g migration add_range_to_user range:float:default:20.0
 
 rem rails db:migrate
 rem rails db:rollback
-
-exit
+rem rails db:setup
