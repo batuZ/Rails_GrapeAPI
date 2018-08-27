@@ -37,3 +37,60 @@ config/routes.rb  ：
 ### 测试API
 
 		http://localhost:3000/man/hello
+		
+		
+		
+		
+----
+# Rails_API
+
+rails 自带的API模式
+
+### 创建工程
+
+	# 简化工程模版，controller 继承自API
+	rails new myPro --api
+
+### 创建主接入点
+
+	在./app/controllers/application_controller.rb 中加一个方法：
+``` ruby
+class ApplicationController < ActionController::API
+	def baseFunc
+		#request.request_method # => GET/POST/PUT/DELETE
+		#request.headers[:token] # => header field
+		#params # => params
+		@params	= params	
+		self.send(params[:command])
+		#self.send(params[:command],params)
+		# k = self.method(params[:command])
+		# k.call(params)
+	end
+end
+```
+
+### 创建 API 控制器
+
+	.> rails g controller api
+	
+	# 写个测试方法
+``` ruby
+class ApiController < ApplicationController
+	def test
+		render json: @params
+	end
+end
+```
+
+### 设置路由
+
+``` ruby
+match '/api/:command' => 'api#baseFunc', via: :all
+```
+
+
+### 测试接口
+
+		http://localhost:3000/api/test
+	
+		
