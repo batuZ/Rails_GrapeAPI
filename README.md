@@ -73,9 +73,9 @@ end
 
 	.> rails g controller api
 	
-	# 写个测试方法
 ``` ruby
 class ApiController < ApplicationController
+	# 写个测试方法
 	def test
 		render json: @params
 	end
