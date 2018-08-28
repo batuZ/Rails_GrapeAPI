@@ -3,6 +3,14 @@ module VERSION_1
 	class Api < Grape::API
 
 		##
+		## 健壮参数
+		##
+		params do
+			requires :x,:y,:z, type: Float
+			optional :msg, tpye: String, defaule: "null"
+		end
+		
+		##
 		## 更新当前状态
 		## 
 		get :updateStatus do
