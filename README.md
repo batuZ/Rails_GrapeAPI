@@ -1,96 +1,24 @@
-# Rails_GrapeAPI
+# README
 
-### 创建一个 rails 工程
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-		rails new Grape_1 --skip-bundle
-		修改 gemfile:
-			source 'https://gems.ruby-china.org'
-			gem 'grape'
-		bundle
+Things you may want to cover:
 
-### 创建api文件、文件夹
+* Ruby version
 
-		app/apis
-		//根据rails约定，对应的类名和路由都必须为 ManAPI
-		app/apis/man_api.rb      
-### 测试代码
+* System dependencies
 
-app/apis/man_api.rb :
-``` ruby
-require './vendor/libs/hand'
-# 引用功能模块
-# './' 是rails工程的根目录
-class ManAPI < Grape::API
-	format :json
-	get 'hello' do
-		'hello'
-	end
-end
+* Configuration
 
-```
+* Database creation
 
-config/routes.rb  ：
-``` ruby
-	mount ManAPI => '/man'
-```
+* Database initialization
 
-### 测试API
+* How to run the test suite
 
-		http://localhost:3000/man/hello
-		
-		
-		
-		
-----
-# Rails_API
+* Services (job queues, cache servers, search engines, etc.)
 
-rails 自带的API模式
+* Deployment instructions
 
-### 创建工程
-
-	# 简化工程模版，controller 继承自API
-	rails new myPro --api
-
-### 创建主接入点
-
-	在./app/controllers/application_controller.rb 中加一个方法：
-``` ruby
-class ApplicationController < ActionController::API
-	def baseFunc
-		#request.request_method # => GET/POST/PUT/DELETE
-		#request.headers[:token] # => header field
-		#params # => params
-		@params	= params	
-		self.send(params[:command])
-		#self.send(params[:command],params)
-		# k = self.method(params[:command])
-		# k.call(params)
-	end
-end
-```
-
-### 创建 API 控制器
-
-	.> rails g controller api
-	
-``` ruby
-class ApiController < ApplicationController
-	# 写个测试方法
-	def test
-		render json: @params
-	end
-end
-```
-
-### 设置路由
-
-``` ruby
-match '/api/:command' => 'api#baseFunc', via: :all
-```
-
-
-### 测试接口
-
-		http://localhost:3000/api/test
-	
-		
+* ...

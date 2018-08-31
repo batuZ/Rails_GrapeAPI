@@ -1,4 +1,5 @@
 require './app/apis/helper.rb'
+
 module VERSION_1
 	class Api < Grape::API
 
@@ -14,6 +15,7 @@ module VERSION_1
 		## 更新当前状态
 		## 
 		get :updateStatus do
+		
 			## 接收
 			point = PointF.new params[:x].to_f, params[:y].to_f, params[:z].to_f, params[:range].to_f
 			## 调方法计算距离
