@@ -7,7 +7,7 @@ module UserManagerHelpers
 # 通过headers['Cookie']判断是否登录，是返回user并更新cookie时间，否返回false
 	def signin?
 		# headers['Cookie'] 或 cookies[:token]为空时返回 false
-		if cookies[:token] && !headers['Cookie'].nil?
+		if cookies[:token] && headers['Cookie'] 
 			# 处理一下headers['Cookie']，用来与cookies[:token]比较
 			str = headers['Cookie']
 			str = str[str.index('=')+1...str.length]
@@ -16,9 +16,9 @@ module UserManagerHelpers
 				# 用 headers['Cookie'] 生成token,从数据库中取user
 				user = User.find_by(token: Digest::SHA1.hexdigest(str))
 					# 获取不到user时返回 false ,否则返回user
-					if user
+					if user 
 						# 更新cookie时间，防止过期
-						setCookie cookies[:token]
+						setCookie(cookies[:token])
 						# 返回user
 						user
 					else
@@ -34,12 +34,14 @@ module UserManagerHelpers
 
 # 登录助手
 	def signin user
-		# 创建token
-		rtoken = SecureRandom.urlsafe_base64 # => 加密字符串 "jnzwx4mT0u99hAtjWtFLfw"
-		# 塞进cookie
-		setCookie rtoken
-		# 把明文字符加密后塞进数据库，用于查找
-		user.update(token: Digest::SHA1.hexdigest(rtoken).to_s)
+		if user 
+			rtoken = SecureRandom.urlsafe_base64
+			setCookie(rtoken)
+			user.update(token: Digest::SHA1.hexdigest(rtoken).to_s)
+			true
+		else
+			false
+		end
 	end
 
 end
