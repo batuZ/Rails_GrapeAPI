@@ -1,7 +1,8 @@
+require 'AM/car.rb'
+require 'AM/ship.rb'
+require 'BM/ship.rb'
 class API < Grape::API
-
   format :json
-
   mount AM::Car
   mount AM::Ship
   mount BM::Ship
