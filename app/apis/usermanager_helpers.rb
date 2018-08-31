@@ -1,7 +1,7 @@
 module UserManagerHelpers
-# 设置 cookies
+# 设置 cookies,过期时间
 	def setCookie token
-		cookies[:token] = { value: token, expires: 1.minutes.from_now.utc, domain: '192.168.3.19', path: '/' }
+		cookies[:token] = { value: token, expires: 1.minutes.from_now.utc, domain: request.ip, path: '/' }
 	end
 
 # 通过headers['Cookie']判断是否登录，是返回user并更新cookie时间，否返回false
@@ -34,6 +34,8 @@ module UserManagerHelpers
 
 # 登录助手
 	def signin user
+		p '>>>>>>>>'
+		p user
 		if user 
 			rtoken = SecureRandom.urlsafe_base64
 			setCookie(rtoken)

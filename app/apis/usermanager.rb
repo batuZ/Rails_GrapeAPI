@@ -7,7 +7,8 @@ desc '用户注册'
 		requires(:name, :password, :password_confirmation, type: String) 
 	end
 	post :signup do
-		error!('401 Unauthorized', 401)	unless signin(User.create(params))
+		user = User.new(params)
+		signin(user) if user.save
 	end
 
 desc '用户登录'
@@ -15,7 +16,7 @@ desc '用户登录'
 		requires(:name, :password, type: String)
 	end
 	post :signin do
-	  signin(User.find_by(name: params[:name]).try(:authenticate, params[:password]))
+	 	signin(User.find_by(name: params[:name]).try(:authenticate, params[:password]))
 	end
 
 desc '模拟用户登录后的访问'
