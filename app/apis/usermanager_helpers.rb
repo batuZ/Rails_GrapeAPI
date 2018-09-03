@@ -34,8 +34,6 @@ module UserManagerHelpers
 
 # 登录助手
 	def signin user
-		p '>>>>>>>>'
-		p user
 		if user 
 			rtoken = SecureRandom.urlsafe_base64
 			setCookie(rtoken)
@@ -46,4 +44,27 @@ module UserManagerHelpers
 		end
 	end
 
+# 用户信息
+ 	def userInfo user
+ 		 if user
+ 			data << {
+				name: user.name,
+				range: user.range,
+				range_get: user.range_get,
+				userType: user.u_type
+			}
+		end
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+

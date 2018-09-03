@@ -19,9 +19,9 @@ desc '用户登录'
 	 	signin(User.find_by(name: params[:name]).try(:authenticate, params[:password]))
 	end
 
-desc '模拟用户登录后的访问'
+desc '更新用户信息'
 	get :userinfo do
-		p signin?
+		userInfo(signin?)
 	end
 
 desc '用户登出'
