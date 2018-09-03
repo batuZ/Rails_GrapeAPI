@@ -47,7 +47,7 @@ module UserManagerHelpers
 # 用户信息
  	def userInfo user
  		 if user
- 			data << {
+ 			data = {
 				name: user.name,
 				range: user.range,
 				range_get: user.range_get,

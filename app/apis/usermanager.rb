@@ -8,7 +8,8 @@ desc '用户注册'
 	end
 	post :signup do
 		user = User.new(params)
-		signin(user) if user.save
+		userInfo(user) if signin(user) if user.save
+
 	end
 
 desc '用户登录'
@@ -16,7 +17,8 @@ desc '用户登录'
 		requires(:name, :password, type: String)
 	end
 	post :signin do
-	 	signin(User.find_by(name: params[:name]).try(:authenticate, params[:password]))
+		user = User.find_by(name: params[:name]).try(:authenticate, params[:password])
+	 	userInfo(user) if signin(user)
 	end
 
 desc '更新用户信息'
