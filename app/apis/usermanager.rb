@@ -28,7 +28,13 @@ desc '更新用户信息'
 
 desc '用户登出'
 	delete :signout do
-		cookies.delete(:token) # if signin?
+		user = signin?
+		if user
+			p ">>> #{user.name} logout"
+			cookies.delete(:token)
+		else
+			p ">>> unkonw logout"
+		end
 	end
 
 desc '修改密码'
@@ -37,6 +43,11 @@ desc '修改密码'
 	end
 	post :changepassword do
 		user = signin?
-		user.update(params) if(user.authenticate(params[:oldpassword])) if(user)
+		if user
+			user.update(params) if(user.authenticate(params[:oldpassword])) if(user)
+			p ">>> #{user.name} update"
+		else
+			p '>>> faild'
+		end
 	end
 end

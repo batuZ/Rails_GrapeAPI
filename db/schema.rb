@@ -1,4 +1,16 @@
-ActiveRecord::Schema.define(version: 2018_08_24_101610) do
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 2018_09_05_085040) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -26,25 +38,27 @@ ActiveRecord::Schema.define(version: 2018_08_24_101610) do
     t.float "y"
     t.float "z"
     t.integer "sound_id"
-    t.index ["sound_id"], name: "index_positions_on_sound_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["sound_id"], name: "index_positions_on_sound_id"
   end
 
   create_table "sounds", force: :cascade do |t|
-    t.string "s_name"
+    t.string "uuid"
+    t.string "url"
+    t.integer "s_type", default: 0  
     t.integer "user_id"
-    t.index ["user_id"], name: "index_sounds_on_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sounds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
     t.string "token"
-    t.float "range", default: 200.0
-    t.float "range_get", default: 50.0
+    t.float "range", default: 500
+    t.float "range_get", default: 1000
     t.integer "u_type", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

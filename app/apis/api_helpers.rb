@@ -1,9 +1,8 @@
 class PointF
-	attr_accessor :x, :y, :z, :range
-	def initialize x, y, z, range
+	attr_accessor :x, :y, :z
+	def initialize x, y, z
 		@x = x
 		@y = y
 		@z = z
-		@range = range
 	end
 end

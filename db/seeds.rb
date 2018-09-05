@@ -29,10 +29,11 @@ sys = User.create(name: 'batu', password: '123456', password_confirmation: '1234
 	# latitude    CLLocationDegrees    4823229.7204252267
 
 uu = UUID.new
-500.times do |i|
+1000.times do |i|
 	we_x = rand + rand(12925344..12992040)
 	sn_y = rand + rand(4823229..4891929)
-	sys.sounds.create(s_name: uu.generate).create_position(x:we_x, y:sn_y, z:0)
+	z = rand + rand(0..240)
+	sys.sounds.create(uuid: uu.generate).create_position(x:we_x, y:sn_y, z:z)
 end
 
 # myTestLocation:
