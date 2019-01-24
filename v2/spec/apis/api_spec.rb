@@ -1,30 +1,5 @@
 require 'rails_helper'
 
-# test target
-RSpec.describe API, type: :request do
-
-	# test action
-	describe '#GET /test' do
-
-		# run before all it '' do
- 		before :each do
-			get '/test', :params => {:message => 'testName'}
-		end
-
-		# test
-		it 'status should be 200' do
-			expect(response.status).to be == 200
-		end
-
-		it 'should return message' do
-			body = JSON.parse(response.body)
-			expect(body['message']).to be == 'testName'
-		end
-
-	end
-end
-
-
 # 创建 user model
 # rails g model User userName password_digest userBio
 # rails g model Sound uuid url user_id:integer

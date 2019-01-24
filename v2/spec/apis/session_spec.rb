@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe SessionAPI do
+	
 	describe '#request', type: :request do
+
 		before :each do
   		@user = User.create(userName: 'test', password: '123456', password_confirmation: '123456')
   	end
@@ -22,5 +24,7 @@ RSpec.describe SessionAPI do
 			expect(body['error']).to_not be_nil
 			expect(body['token']).to be_nil
 		end
+
 	end
+
 end

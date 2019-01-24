@@ -15,14 +15,16 @@ class UserAPI < Grape::API
 			end
 		end
 
-		before do
-			authenticate_user! #in helper
-		end
+	
 		params do
 			requires(:token, :userBio, type: String) 
 		end
+		before do
+			authenticate_user! #in helper
+		end
 		put do #更新用户
-			if current_user.update(params['userBio']) #in helper
+			status 200
+			if current_user.update(:userBio => params['userBio']) #in helper
 				{success: true}
 			else
 				{error: current_user.errors.full_messages}

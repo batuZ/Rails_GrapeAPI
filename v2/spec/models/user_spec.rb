@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User do
 
+	# 测试类功能
 	describe '#Model',type: :model do
+
 		before :each do
 			@user = User.create(userName: 'test', password: '123456', password_confirmation: '123456')
 		end
@@ -21,6 +23,7 @@ RSpec.describe User do
 
 	end
 	
+	# 测试请求
 	describe '#request', type: :request do
 
 		it '注册用户 POST /user' do
@@ -46,9 +49,17 @@ RSpec.describe User do
 			expect(User.count).to be == 0
 		end
 
-		# it '测试更新用户正确 PUT /user' do
-
-		# end
+		it '测试更新用户正确 PUT /user' do
+			user = User.create(userName: 'test', password: '123456', password_confirmation: '123456')
+			post '/session', :params => {userName: 'test', password: '123456'}
+			expect(response.status).to be == 200
+			token = JSON.parse(response.body)['token']
+			put '/user', :params => {token: token, userBio: 'newUserBio'}
+			expect(response.status).to be == 200
+			expect(JSON.parse(response.body)['success']).to be true
+			user.reload
+			expect(user.userBio).to be == 'newUserBio'
+		end
 	end
 
 end
