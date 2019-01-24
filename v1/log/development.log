@@ -1,0 +1,1 @@
+DEPRECATION WARNING: Using `Rails::Application` subclass to start the server is deprecated and will be removed in Rails 6.0. Please change `run API` to `run Rails.application` in config.ru. (called from <main> at bin/rails:4)
