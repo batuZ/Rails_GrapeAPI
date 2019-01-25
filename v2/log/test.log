@@ -5667,3 +5667,168 @@ Started PUT "/user" for 127.0.0.1 at 2019-01-24 15:49:24 +0800
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$nEU0Idw0tfWsXTuYxM7ae.fckt2c8geg6YZ2CYUMWz/W/ojoiJjaK"], ["created_at", "2019-01-24 10:00:18.966319"], ["updated_at", "2019-01-24 10:00:18.966319"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:18 +0800
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$.vfUgdimW/MN5lgDkjfkB.V9Fu5xEQKyy3d0WAYanMleiurh.ANw2"], ["created_at", "2019-01-24 10:00:19.091405"], ["updated_at", "2019-01-24 10:00:19.091405"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$rpLWPjdJTBOSeAcz7UCRMups/WiNs30Hv7Ed99uZnAEScmmlHE8FO"], ["created_at", "2019-01-24 10:00:19.107638"], ["updated_at", "2019-01-24 10:00:19.107638"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+Started POST "/user/sounds" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (2.4ms)[0m  [1m[32mINSERT INTO "sounds" ("url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "URLx"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.175349"], ["updated_at", "2019-01-24 10:00:19.175349"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "sounds" WHERE "sounds"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mSound Load (0.2ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ? ORDER BY "sounds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$mWkWIGf1j8u052/bSNYG7.d0AJyLuj7jX5k.rdl9AcnS1b3L3RqHi"], ["created_at", "2019-01-24 10:00:19.194230"], ["updated_at", "2019-01-24 10:00:19.194230"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.2ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.205302"], ["updated_at", "2019-01-24 10:00:19.205302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/user/sounds/987" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSound Load (0.1ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ? AND "sounds"."id" = ? ORDER BY "sounds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["id", 987], ["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$aPX8F1pmVhhyuekY26YeROiNCxTK1A5lPLrwZmn3Zrw0vgFr.SoI6"], ["created_at", "2019-01-24 10:00:19.241538"], ["updated_at", "2019-01-24 10:00:19.241538"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.2ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.248762"], ["updated_at", "2019-01-24 10:00:19.248762"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/user/sounds/1" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSound Load (0.2ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ? AND "sounds"."id" = ? ORDER BY "sounds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Update (0.1ms)[0m  [1m[33mUPDATE "sounds" SET "uuid" = ?, "url" = ?, "updated_at" = ? WHERE "sounds"."id" = ?[0m  [["uuid", "newUUID"], ["url", "newURL"], ["updated_at", "2019-01-24 10:00:19.253550"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSound Load (0.2ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$xrkkvmHu.E1mtdlOW9DtHOuLh5YXBXWPiWjYEpmZYhqpjtWzKKHNu"], ["created_at", "2019-01-24 10:00:19.263815"], ["updated_at", "2019-01-24 10:00:19.263815"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.2ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.272610"], ["updated_at", "2019-01-24 10:00:19.272610"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/user/sounds/1" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSound Load (0.2ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ? AND "sounds"."id" = ? ORDER BY "sounds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "sounds" WHERE "sounds"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "sounds" WHERE "sounds"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$V/wPTz4XVgr7TIR63iPG2egBgeqgskDMSRVPlw3fo1XseMi99vJHa"], ["created_at", "2019-01-24 10:00:19.294021"], ["updated_at", "2019-01-24 10:00:19.294021"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.2ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.302549"], ["updated_at", "2019-01-24 10:00:19.302549"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.1ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.304924"], ["updated_at", "2019-01-24 10:00:19.304924"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/user/sounds/2?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.TGaxCZn0a83tKchkcEcBNXNPm-_8v1uWtDK5s685LEE" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSound Load (0.8ms)[0m  [1m[34mSELECT  "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ? AND "sounds"."id" = ? ORDER BY "sounds"."id" ASC LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$6K3OH5PzcZDralSYMzFSf.1OOau5Sq6nMPxjj7EnSTvQdFfddnnk."], ["created_at", "2019-01-24 10:00:19.319296"], ["updated_at", "2019-01-24 10:00:19.319296"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSound Create (0.2ms)[0m  [1m[32mINSERT INTO "sounds" ("uuid", "url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "testUUID"], ["url", "testURL"], ["user_id", 1], ["created_at", "2019-01-24 10:00:19.328941"], ["updated_at", "2019-01-24 10:00:19.328941"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/user/sounds?token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.TGaxCZn0a83tKchkcEcBNXNPm-_8v1uWtDK5s685LEE" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSound Load (0.2ms)[0m  [1m[34mSELECT "sounds".* FROM "sounds" WHERE "sounds"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$42JC6hskBiAa7./xO7yG7ugc/rCMrz31lZKpeMv0.Lgsn/dZkHH7G"], ["created_at", "2019-01-24 10:00:19.348716"], ["updated_at", "2019-01-24 10:00:19.348716"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$RrXYVCJc1tlSExIj13pwgeHT4Sd2.c1GGwJ/l.cB13sNq8oC7zmj6"], ["created_at", "2019-01-24 10:00:19.362904"], ["updated_at", "2019-01-24 10:00:19.362904"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/user" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$pddkZh8Ngmf9IgrTXnePz.f8cAGqdOCMxTBd27wwd/nFvRi.JgLgK"], ["created_at", "2019-01-24 10:00:19.377571"], ["updated_at", "2019-01-24 10:00:19.377571"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (2.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$mH2niY6Hvl.bPkZSEFwjkOwqqlMwHWJpLJtrWTYpL67Taq268L25C"], ["created_at", "2019-01-24 10:00:19.388086"], ["updated_at", "2019-01-24 10:00:19.388086"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/user" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/user" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userName", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userName", "test"], ["password_digest", "$2a$04$J1x48SEIRTja7A8UcIjhluqs8hGS2yZnYR3Zac4hGR0spXF4YrfZG"], ["created_at", "2019-01-24 10:00:19.450908"], ["updated_at", "2019-01-24 10:00:19.450908"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/session" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."userName" = ? LIMIT ?[0m  [["userName", "test"], ["LIMIT", 1]]
+Started PUT "/user" for 127.0.0.1 at 2019-01-24 18:00:19 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."userName" = ? AND "users"."id" != ? LIMIT ?[0m  [["userName", "test"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "userBio" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["userBio", "newUserBio"], ["updated_at", "2019-01-24 10:00:19.462874"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m

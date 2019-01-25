@@ -1,3 +1,5 @@
+require 'Entities.rb'
+
 class API < Grape::API
 	format :json
 
@@ -24,4 +26,9 @@ class API < Grape::API
 	mount UserAPI
 	mount SessionAPI
 	mount SoundAPI
+
+	# 测试 grape-entity
+	get :users do
+		present User.all, with: UserEnt
+	end
 end
